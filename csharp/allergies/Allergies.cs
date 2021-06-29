@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 [Flags]
 public enum Allergen
@@ -15,20 +16,26 @@ public enum Allergen
 
 public class Allergies
 {
-    private readonly Allergen _allergies;
+    private readonly Allergen[] _allValues;
 
     public Allergies(int mask)
     {
-        _allergies = (Allergen)mask;
+        _allValues = BreakDown((Allergen)mask);
     }
 
     public bool IsAllergicTo(Allergen allergen)
-    {
-        return _allergies.HasFlag(allergen);
-    }
+        => Array.Exists(_allValues, v => v == allergen);
 
-    public Allergen[] List()
+    public Allergen[] List() => _allValues;
+
+    private static Allergen[] BreakDown(Allergen mask)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        var result = new List<Allergen>();
+
+        foreach (Allergen value in Enum.GetValues(typeof(Allergen)))
+            if (mask.HasFlag(value))
+                result.Add(value);
+
+        return result.ToArray();
     }
 }

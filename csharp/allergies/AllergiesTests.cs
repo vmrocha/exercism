@@ -284,14 +284,14 @@ public class AllergiesTests
         Assert.True(sut.IsAllergicTo(Allergen.Cats));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void No_allergies()
     {
         var sut = new Allergies(0);
         Assert.Empty(sut.List());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Just_eggs()
     {
         var sut = new Allergies(1);
@@ -299,7 +299,7 @@ public class AllergiesTests
         Assert.Equal(expected, sut.List());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Just_peanuts()
     {
         var sut = new Allergies(2);
@@ -307,7 +307,7 @@ public class AllergiesTests
         Assert.Equal(expected, sut.List());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Just_strawberries()
     {
         var sut = new Allergies(8);
@@ -315,7 +315,7 @@ public class AllergiesTests
         Assert.Equal(expected, sut.List());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Eggs_and_peanuts()
     {
         var sut = new Allergies(3);
@@ -323,7 +323,7 @@ public class AllergiesTests
         Assert.Equal(expected, sut.List());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void More_than_eggs_but_not_peanuts()
     {
         var sut = new Allergies(5);
@@ -331,7 +331,7 @@ public class AllergiesTests
         Assert.Equal(expected, sut.List());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Lots_of_stuff()
     {
         var sut = new Allergies(248);
@@ -339,7 +339,7 @@ public class AllergiesTests
         Assert.Equal(expected, sut.List());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Everything()
     {
         var sut = new Allergies(255);
@@ -347,7 +347,7 @@ public class AllergiesTests
         Assert.Equal(expected, sut.List());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void No_allergen_score_parts()
     {
         var sut = new Allergies(509);

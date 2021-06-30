@@ -12,6 +12,6 @@ module ResistorColorDuo
     "white"  => 9
   }
   def self.value(bands)
-    BANDS[bands[0]] * 10 + BANDS[bands[1]]
+    bands.take(2).map { |b| BANDS[b] }.join.to_i
   end
 end

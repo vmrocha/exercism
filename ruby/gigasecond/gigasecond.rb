@@ -1,6 +1,6 @@
 module Gigasecond
-    def self.from(time)
-        time + 1_000_000_000
-    end
+  GIGASECOND = 1_000_000_000
+  def self.from(moment)
+    moment + GIGASECOND
+  end
 end
-

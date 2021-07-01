@@ -1,5 +1,6 @@
-module ResistorColorDuo
-  BANDS = {
+class ResistorColorDuo
+
+  RESISTANCE_VALUES = {
     "black"  => 0,
     "brown"  => 1,
     "red"    => 2,
@@ -11,7 +12,19 @@ module ResistorColorDuo
     "grey"   => 8,
     "white"  => 9
   }
+
+  attr_accessor :bands
+
   def self.value(bands)
-    bands.take(2).map { |b| BANDS[b] }.join.to_i
+    new(bands).to_i
   end
+
+  def initialize(bands)
+    self.bands = bands.take(2)
+  end
+
+  def to_i
+    self.bands.map(&RESISTANCE_VALUES).join.to_i
+  end
+  
 end

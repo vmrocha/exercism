@@ -17,14 +17,18 @@ class ResistorColorDuo
     new(bands).to_i
   end
 
-  attr_reader :bands
+  private
 
-  def initialize(bands)
-    @bands = bands.take(2)
-  end
+    def initialize(bands)
+      @bands = bands.take(2)
+    end
 
-  def to_i
-    bands.sum('') {|b| BANDS[b.to_sym].to_s }.to_i
-  end
+  public
+
+    attr_reader :bands
+
+    def to_i
+      bands.sum('') {|b| BANDS[b.to_sym].to_s }.to_i
+    end
 
 end

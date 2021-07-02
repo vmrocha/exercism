@@ -1,16 +1,16 @@
 class ResistorColorDuo
 
   BANDS = {
-    "black"  => 0,
-    "brown"  => 1,
-    "red"    => 2,
-    "orange" => 3,
-    "yellow" => 4,
-    "green"  => 5,
-    "blue"   => 6,
-    "violet" => 7,
-    "grey"   => 8,
-    "white"  => 9
+    "black"  => '0',
+    "brown"  => '1',
+    "red"    => '2',
+    "orange" => '3',
+    "yellow" => '4',
+    "green"  => '5',
+    "blue"   => '6',
+    "violet" => '7',
+    "grey"   => '8',
+    "white"  => '9'
   }
 
   def self.value(bands)
@@ -24,7 +24,7 @@ class ResistorColorDuo
   end
 
   def to_i
-    bands.map(&BANDS).join.to_i
+    bands.sum('') {|b| BANDS[b] }.to_i
   end
   
 end

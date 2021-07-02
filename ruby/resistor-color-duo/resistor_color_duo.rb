@@ -13,11 +13,11 @@ class ResistorColorDuo
     "white"  => 9
   }
 
-  attr_accessor :bands
-
   def self.value(bands)
     new(bands).to_i
   end
+
+  attr_accessor :bands
 
   def initialize(bands)
     self.bands = bands.take(2)

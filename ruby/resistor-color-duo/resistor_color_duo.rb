@@ -1,4 +1,5 @@
 class ResistorColorDuo
+
   BANDS = {
     "black"  => '0',
     "brown"  => '1',
@@ -11,7 +12,7 @@ class ResistorColorDuo
     "grey"   => '8',
     "white"  => '9'
   }
-  
+
   def self.value(bands)
     new(bands).to_i
   end
@@ -25,4 +26,5 @@ class ResistorColorDuo
   def to_i
     bands.sum('') {|b| BANDS[b] }.to_i
   end
+
 end

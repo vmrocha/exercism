@@ -24,7 +24,7 @@ class ResistorColorDuo
   end
 
   def to_i
-    self.bands.map(&BANDS).join.to_i
+    bands.map(&BANDS).join.to_i
   end
   
 end

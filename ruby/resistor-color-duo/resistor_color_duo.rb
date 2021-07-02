@@ -1,6 +1,6 @@
 class ResistorColorDuo
 
-  RESISTANCE_VALUES = {
+  BANDS = {
     "black"  => 0,
     "brown"  => 1,
     "red"    => 2,
@@ -24,7 +24,7 @@ class ResistorColorDuo
   end
 
   def to_i
-    self.bands.map(&RESISTANCE_VALUES).join.to_i
+    self.bands.map(&BANDS).join.to_i
   end
   
 end

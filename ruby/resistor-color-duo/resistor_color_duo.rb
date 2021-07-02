@@ -17,10 +17,10 @@ class ResistorColorDuo
     new(bands).to_i
   end
 
-  attr_accessor :bands
+  attr_reader :bands
 
   def initialize(bands)
-    self.bands = bands.take(2)
+    @bands = bands.take(2)
   end
 
   def to_i

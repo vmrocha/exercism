@@ -20,7 +20,7 @@ class ResistorColorDuo
   private
 
     def initialize(bands)
-      @bands = bands.take(2)
+      @bands = bands.take(2).sum('') {|b| BANDS[b.to_sym].to_s }
     end
 
   public
@@ -28,7 +28,7 @@ class ResistorColorDuo
     attr_reader :bands
 
     def to_i
-      bands.sum('') {|b| BANDS[b.to_sym].to_s }.to_i
+      bands.to_i
     end
 
 end

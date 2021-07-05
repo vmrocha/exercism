@@ -1,5 +1,9 @@
 require 'minitest/autorun'
+require 'minitest/pride'
+require 'minitest/reporters'
 require_relative 'leap'
+
+Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(:color => true)]
 
 # Common test data version: 1.4.0 3134d31
 class Date

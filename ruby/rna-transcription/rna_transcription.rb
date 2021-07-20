@@ -7,8 +7,8 @@ module Complement
     'A' => 'U'
   }
 
-  def self.of_dna(rna)
-    return rna.chars.sum('') {|c| COMPLEMENT[c]}
+  def self.of_dna(nucleotides)
+    return nucleotides.chars.sum('') {|c| COMPLEMENT[c]}
   end
 
 end
